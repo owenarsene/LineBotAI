@@ -16,6 +16,7 @@
 import os
 import sys
 from argparse import ArgumentParser
+import phonetics as pn
 
 from flask import Flask, request, abort
 from linebot import (
@@ -64,10 +65,11 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-
+   
+        result =pn.read(event.message.text)
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)
+            TextSendMessage(text=result)
         )
 
     return 'OK'
