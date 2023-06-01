@@ -66,8 +66,8 @@ def callback():
         if not isinstance(event.message, TextMessage):
             continue
         
-        url=https://i1.sndcdn.com/artworks-000046452505-ctu176-t500x500.jpg
-        line_bot_api.reply_message(
+        
+        line_bot_api.reply_message(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png
             event.reply_token,
             ImageSendMessage(
                     original_content_url = image,
