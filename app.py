@@ -66,11 +66,11 @@ def callback():
         if not isinstance(event.message, TextMessage):
             continue
         
-        line_bot_api.reply_message(
+        line_bot_api.reply_message(https://i1.sndcdn.com/artworks-000046452505-ctu176-t500x500.jpg
             event.reply_token,
             ImageSendMessage(
-                    original_content_url = https://i1.sndcdn.com/artworks-000046452505-ctu176-t500x500.jpg,
-                    preview_image_url = https://i1.sndcdn.com/artworks-000046452505-ctu176-t500x500.jpg)
+                    original_content_url = image,
+                    preview_image_url = image)
 )
         """
         result =pn.read(event.message.text)
