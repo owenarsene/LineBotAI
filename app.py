@@ -67,7 +67,7 @@ def callback():
             continue
         
         
-        line_bot_api.reply_message(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png
+        line_bot_api.reply_message(
             event.reply_token,
             ImageSendMessage(
                     original_content_url = image,
