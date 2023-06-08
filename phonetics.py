@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import random
+import os
 from PIL import Image
 from io import BytesIO
-word = input('請輸入關鍵字:')
+word = os.getenv('KEYWORD', 'default_keyword')
 def read(word):
     url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
     html = requests.get(url)
