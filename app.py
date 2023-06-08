@@ -16,7 +16,7 @@
 import os
 import sys
 from argparse import ArgumentParser
-import phonetic as pn
+import phonetics as pn
 
 from flask import Flask, request, abort
 from linebot import (
