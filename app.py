@@ -93,12 +93,16 @@ else:
 
         # line_bot_api.reply_message(
             
-        result =pn.read(event.message.text)
+result[1] =pn.read(event.message.text)
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=result)
         )
-
+result[0]=pn.read(event.reply_token,
+            ImageSendMessage(
+                    original_content_url = image,
+                    preview_image_url = image)
+)
 message = []
 
 message.append( TextSendMessage( text = 'result[1]' ) )
