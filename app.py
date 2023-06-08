@@ -87,9 +87,9 @@ if len(data) > 0:
 
     # Display the photo
     response = (title, photo_url)
-    return ( response )
+    print ( response )
 else:
-    return ("查無資料")
+    print ("查無資料")
 
         # line_bot_api.reply_message(
             
