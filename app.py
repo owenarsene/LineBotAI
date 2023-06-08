@@ -93,24 +93,23 @@ else:
 
         # line_bot_api.reply_message(
             
-result[1] =pn.read(event.message.text)
-               event.reply_token,
-            TextSendMessage(text=result)
-        )
-result[0]=pn.read(event.reply_token,
-            ImageSendMessage(
-                    original_content_url = image,
-                    preview_image_url = image)
+result[1] = pn.read(event.message.text)
+line_bot_api.reply_message(
+    event.reply_token,
+    TextSendMessage(text=result[1])
 )
-message = []
 
-message.append( TextSendMessage( text = 'result[1]' ) )
-message.append( ImageSendMessage(
-            original_content_url = 'result[0]',
-            preview_image_url = 'result[0]' ) )
+result[0] = pn.read(event.reply_token)
+image_message = ImageSendMessage(
+    original_content_url=result[0],
+    preview_image_url=result[0]
+)
+message = [TextSendMessage(text=result[1]), image_message]
 
-line_bot_api.reply_message( event.reply_token, message )
-    return 'OK'
+line_bot_api.reply_message(event.reply_token, message)
+return 'OK'
+
+
 
 
 if __name__ == "__main__":
