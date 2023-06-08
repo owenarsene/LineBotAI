@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 import random
 from PIL import Image
 from io import BytesIO
+word = input('請輸入關鍵字:')
 def read(word):
-    word = input('請輸入關鍵字:')
     url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
     html = requests.get(url)
     bs = BeautifulSoup(html.text, 'lxml')
