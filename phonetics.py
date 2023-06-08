@@ -1,3 +1,4 @@
+pip install Pillow
 import requests
 from bs4 import BeautifulSoup
 import random
