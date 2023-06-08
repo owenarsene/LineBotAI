@@ -16,12 +16,6 @@
 import os
 import sys
 from argparse import ArgumentParser
-import phonetics as pn
-import requests
-from bs4 import BeautifulSoup
-import random
-from PIL import Image
-from io import BytesIO
 
 from flask import Flask, request, abort
 from linebot import (
@@ -31,7 +25,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
+    MessageEvent, TextMessage, TextSendMessage,
 )
 
 app = Flask(__name__)
@@ -70,46 +64,13 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-       
-word = input('請輸入關鍵字:')
-url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
-html = requests.get(url)
-bs = BeautifulSoup(html.text, 'lxml')
-data = bs.find_all('a', {'class': 'post-title ga_track'})
-def:
-    if len(data) > 0:
-        selected_item = random.choice(data)
-        title = selected_item.text.strip()
-        photo_url = selected_item.find_previous('img')['src']
 
-        #print("Title:", title)
-        #print("Photo URL:", https://pansci.asia/wp-content/uploads/2023/03/christian-rosswag-P_6UKCsYLNs-unsplash-510x315.jpg)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=event.message.text)
+        )
 
-        # Display the photo
-        response = (title, photo_url)
-        return ( response )
-    else:
-        return ("查無資料")
-
-        # line_bot_api.reply_message(
-            
-result[1] = pn.read(event.message.text)
-line_bot_api.reply_message(
-    event.reply_token,
-    TextSendMessage(text=result[1])
-)
-
-result[0] = pn.read(event.reply_token)
-image_message = ImageSendMessage(
-    original_content_url=result[0],
-    preview_image_url=result[0]
-)
-message = [TextSendMessage(text=result[1]), image_message]
-
-line_bot_api.reply_message(event.reply_token, message)
-return 'OK'
-
-
+    return 'OK'
 
 
 if __name__ == "__main__":
