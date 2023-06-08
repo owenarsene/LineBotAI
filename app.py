@@ -107,7 +107,7 @@ image_message = ImageSendMessage(
 message = [TextSendMessage(text=result[1]), image_message]
 
 line_bot_api.reply_message(event.reply_token, message)
-return 'OK'
+print 'OK'
 
 
 
