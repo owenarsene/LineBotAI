@@ -94,8 +94,7 @@ else:
         # line_bot_api.reply_message(
             
 result[1] =pn.read(event.message.text)
-        line_bot_api.reply_message(
-            event.reply_token,
+               event.reply_token,
             TextSendMessage(text=result)
         )
 result[0]=pn.read(event.reply_token,
