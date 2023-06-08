@@ -70,13 +70,13 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-def:        
-    word = input('請輸入關鍵字:')
-    url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
-    html = requests.get(url)
-    bs = BeautifulSoup(html.text, 'lxml')
-    data = bs.find_all('a', {'class': 'post-title ga_track'})
-
+       
+word = input('請輸入關鍵字:')
+url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
+html = requests.get(url)
+bs = BeautifulSoup(html.text, 'lxml')
+data = bs.find_all('a', {'class': 'post-title ga_track'})
+def:
     if len(data) > 0:
         selected_item = random.choice(data)
         title = selected_item.text.strip()
