@@ -5,6 +5,13 @@ import os
 from PIL import Image
 from io import BytesIO
 word = os.getenv('KEYWORD', 'default_keyword')
+import requests
+from bs4 import BeautifulSoup
+import random
+import os
+from PIL import Image
+from io import BytesIO
+word = os.getenv('KEYWORD', 'default_keyword')
 def read(word):
     url = f'https://pansci.asia/?post_type%5B%5D=post&post_type%5B%5D=post_review&post_type%5B%5D=pan_booklist&s={word}'
     html = requests.get(url)
@@ -15,17 +22,13 @@ def read(word):
         selected_item = random.choice(data)
         title = selected_item.text.strip()
         photo_url = selected_item.find_previous('img')['src']
-        article_url = selected_item['href']
 
-        # Create the clickable link with the title and photo URL
-        link = f"<a href='{photo_url}'>{title}</a>"
-        # Create the link for the article
-        article_link = f"Article: <a href='{article_url}'>{article_url}</a>"
+        #print("Title:", title)
+        #print("Photo URL:", https://pansci.asia/wp-content/uploads/2023/03/christian-rosswag-P_6UKCsYLNs-unsplash-510x315.jpg)
 
-        # Return the link, title, and article link as a tuple
-        return title, link, article_link
+        # Display the photo
+        response = (title, photo_url)
+        return ( response )
     else:
-        return "查無資料"
-
-result = read(word)
-print(result)
+        return ("查無資料")
+read(word)
