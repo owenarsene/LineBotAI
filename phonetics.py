@@ -22,13 +22,20 @@ def read(word):
         selected_item = random.choice(data)
         title = selected_item.text.strip()
         photo_url = selected_item.find_previous('img')['src']
+        article_url = selected_item['href']
 
-        #print("Title:", title)
-        #print("Photo URL:", https://pansci.asia/wp-content/uploads/2023/03/christian-rosswag-P_6UKCsYLNs-unsplash-510x315.jpg)
+        # Create the clickable link with the title and photo URL
+        link = f"<a href='{photo_url}'>{title}</a>"
 
-        # Display the photo
-        response = (title, photo_url)
-        return ( response )
+        # Create the clickable link with the article URL
+        article_link = f"<a href='{article_url}'>Read Article</a>"
+
+        # Combine the photo link, article link, and title
+        result = f"{link}<br/>{article_link}"
+
+        return result
     else:
-        return ("查無資料")
-read(word)
+        return "查無資料"
+
+result = read(word)
+print(result)
