@@ -17,6 +17,9 @@ def read(word):
     html = requests.get(url)
     bs = BeautifulSoup(html.text, 'lxml')
     data = bs.find_all('a', {'class': 'post-title ga_track'})
+#BeautifulSoup pip install
+
+
 
     if len(data) > 0:
         selected_item = random.choice(data)
