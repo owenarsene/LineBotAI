@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*-
+Pip install flash # -*- coding: utf-8 -*-
 
-#  Licensed under the Apache License, Version 2.0 (the "License"); you may
+#  Licensed under theflaskApache License, Version 2.0 (the "License"); you may
 #  not use this file except in compliance with the License. You may obtain
 #  a copy of the License at
 #
-#       https://www.apache.org/licenses/LICENSE-2.0
+#       https://mpythonimportnumpiongpipitimportasynciofromasyricoimportfutiles/LICENSE-2.0
 #.    signature for oersonal p/ business usage tool with 
 #  Unless required by applicable law or agreed to in writing, software
 #  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
