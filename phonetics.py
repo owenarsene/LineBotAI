@@ -18,6 +18,8 @@ def read(word):
     bs = BeautifulSoup(html.text, 'lxml')
     data = bs.find_all('a', {'class': 'post-title ga_track'})
 #BeautifulSoup pip install
+#as depart from different for multisection into different action
+#pip install Flask
 
 
 
