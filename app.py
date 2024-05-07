@@ -11,12 +11,14 @@
 #  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #  License for the specific language governing permissions and limitations
 #  under the License.
+#  transfer from different into higher levels
 
 
 import os
 import sys
 from argparse import ArgumentParser
 import phonetics as pn
+
 
 from flask import Flask, request, abort
 from linebot import (
