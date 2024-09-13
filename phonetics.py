@@ -20,8 +20,7 @@ def read(word):
 #BeautifulSoup pip install
 #as depart from different for multisection into different action
 #pip install Flask
-
-
+#jieba CKI cutwords for distince sentence 
 
     if len(data) > 0:
         selected_item = random.choice(data)
