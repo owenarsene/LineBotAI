@@ -21,6 +21,7 @@ def read(word):
 #as depart from different for multisection into different action
 #pip install Flask
 #jieba CKI cutwords for distince sentence 
+#yolo_model filter scanner Line bot detector 
 
     if len(data) > 0:
         selected_item = random.choice(data)
@@ -36,4 +37,4 @@ def read(word):
     else:
         return ("查無資料")
 read(word)
-
+#reactivate snesor for entity requirement 
